@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage ("compile stage") {
             steps {
-			withMaven (maven: 'maven){
+			withMaven (maven: 'maven-3.6.3){
 			  bat 'mvn clean compile'               
             }
           }
         }
         stage ('Testing stage') {
-		    withMaven (maven: 'maven){
+		    withMaven (maven: 'maven-3.6.3){
 			  bat 'mvn Test'      
             }
           }
